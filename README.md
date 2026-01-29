@@ -1,2 +1,2 @@
 # restaurant-management-system
-System that handal Restaurant.
+System that handle Restaurant.
