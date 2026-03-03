@@ -1,4 +1,4 @@
-# Gourmet Palace - Restaurant Management System
+# Royal Palace - Restaurant Management System
 
 A full-stack MERN (MongoDB, Express, React, Node.js) application for restaurant management, featuring real-time ordering, reservations, and an admin dashboard.
 

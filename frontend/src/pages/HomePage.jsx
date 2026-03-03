@@ -35,7 +35,7 @@ const HomePage = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">Our Story</h2>
           <p className="max-w-3xl mx-auto text-lg text-gray-300">
-            Founded in 1995, Gourmet Palace has been at the forefront of culinary innovation. 
+            Founded in 1995, Royal Palace has been at the forefront of culinary innovation. 
             Our master chefs use only the finest organic ingredients sourced from local farmers 
             to create unforgettable dining experiences.
           </p>

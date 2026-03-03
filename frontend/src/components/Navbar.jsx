@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-primary">Gourmet Palace</Link>
+        <Link to="/" className="text-2xl font-bold text-primary">Royal Palace</Link>
         
         <div className="hidden md:flex space-x-8">
           <Link to="/" className="hover:text-primary transition">Home</Link>
