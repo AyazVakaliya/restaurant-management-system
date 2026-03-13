@@ -10,7 +10,7 @@ const generateToken = (id) => {
 // @route   POST /api/users/login
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ email: email.toLowerCase() });
   if (user && (await user.matchPassword(password))) {
     res.json({
       _id: user._id,
@@ -29,7 +29,7 @@ const authUser = asyncHandler(async (req, res) => {
 // @route   POST /api/users
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
-  const userExists = await User.findOne({ email });
+  const userExists = await User.findOne({ email: email.toLowerCase() });
   if (userExists) {
     res.status(400);
     throw new Error('User already exists');

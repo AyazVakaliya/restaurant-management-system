@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 const Menu = require('./models/Menu');
 const User = require('./models/User');
 const Order = require('./models/Order');
@@ -23,8 +25,8 @@ const seedData = async () => {
 
     // Create ONLY the Admin User
     const adminUser = await User.create({
-      name: 'Super Admin',
-      email: 'admin@gourmet.com',
+      name: 'Royal Palace Admin',
+      email: 'royaladmin@gmail.com',
       password: 'ayaz@123',
       role: 'admin'
     });
@@ -33,7 +35,7 @@ const seedData = async () => {
     await Menu.insertMany(menuItems);
 
     console.log('Data Seeded Successfully!');
-    console.log('Admin Email: admin@gourmet.com');
+    console.log('Admin Email: royaladmin@gmail.com');
     console.log('Admin Password: ayaz@123');
     process.exit();
   } catch (error) {

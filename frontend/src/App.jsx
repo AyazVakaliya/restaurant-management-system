@@ -23,6 +23,7 @@ function App() {
             <Route path="/menu" element={<MenuPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/login/admin" element={<LoginPage isAdminLogin={true} />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/order/:id" element={<OrderTrackingPage />} />
