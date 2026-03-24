@@ -29,3 +29,7 @@ Thumbs.db
 # Build outputs
 dist/
 build/
+
+# Screenshots and project images
+Screenshot 2026-03-24 *.png
+MENU_ITEM_IMG/
