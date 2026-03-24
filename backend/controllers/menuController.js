@@ -73,4 +73,12 @@ const deleteMenuItem = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { getMenuItems, getMenuItemById, createMenuItem, updateMenuItem, deleteMenuItem };
+// @desc    Delete all menu items
+// @route   DELETE /api/menu
+// @access  Private/Admin
+const deleteAllMenuItems = asyncHandler(async (req, res) => {
+  await Menu.deleteMany({});
+  res.json({ message: 'All menu items removed' });
+});
+
+module.exports = { getMenuItems, getMenuItemById, createMenuItem, updateMenuItem, deleteMenuItem, deleteAllMenuItems };

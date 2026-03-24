@@ -7,12 +7,13 @@ const User = require('../models/User');
 const getDashboardStats = asyncHandler(async (req, res) => {
   const totalOrders = await Order.countDocuments();
   const totalUsers = await User.countDocuments({ role: 'customer' });
-  const orders = await Order.find({ isPaid: true });
+  
+  // Include all orders except cancelled ones for revenue and graph
+  const orders = await Order.find({ orderStatus: { $ne: 'Cancelled' } });
   const totalRevenue = orders.reduce((acc, item) => acc + item.totalPrice, 0);
 
-  // Sales by category/day could be expanded here
   const salesData = await Order.aggregate([
-    { $match: { isPaid: true } },
+    { $match: { orderStatus: { $ne: 'Cancelled' } } },
     {
       $group: {
         _id: { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } },

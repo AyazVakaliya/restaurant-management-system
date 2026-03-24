@@ -6,11 +6,12 @@ import MenuCard from '../components/MenuCard';
 const MenuPage = () => {
   const dispatch = useDispatch();
   const { items, loading } = useSelector((state) => state.menu);
+  const { userInfo } = useSelector((state) => state.auth);
   const [activeCategory, setActiveCategory] = useState('all');
 
   useEffect(() => {
     dispatch(fetchMenu());
-  }, [dispatch]);
+  }, [dispatch, userInfo]);
 
   const categories = ['all', 'starters', 'mains', 'desserts', 'drinks'];
 
@@ -40,11 +41,15 @@ const MenuPage = () => {
 
       {loading ? (
         <div className="text-center py-20">Loading amazing food...</div>
-      ) : (
+      ) : filteredItems.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredItems.map(item => (
             <MenuCard key={item._id} item={item} />
           ))}
+        </div>
+      ) : (
+        <div className="text-center py-20">
+          <p className="text-xl text-gray-500">No menu items found for this category.</p>
         </div>
       )}
     </div>

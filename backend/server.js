@@ -49,6 +49,7 @@ app.use('/api/orders', require('./routes/orderRoutes'));
 app.use('/api/reservations', require('./routes/reservationRoutes'));
 app.use('/api/reviews', require('./routes/reviewRoutes'));
 app.use('/api/analytics', require('./routes/analyticsRoutes'));
+app.use('/api/upload', require('./routes/uploadRoutes'));
 
 app.get('/', (req, res) => {
   res.send('API is running...');
